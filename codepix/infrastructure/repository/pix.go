@@ -11,7 +11,7 @@ type PixKeyRepositoryDb struct {
 	Db *gorm.DB
 }
 
-func (r *PixKeyRepositoryDb) AddBank(bank *model.Bank) error {
+func (r PixKeyRepositoryDb) AddBank(bank *model.Bank) error {
 	err := r.Db.Create(bank).Error
 	if err != nil {
 		return err
